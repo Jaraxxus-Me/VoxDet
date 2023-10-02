@@ -1,0 +1,7 @@
+data/*
+.vscode/
+vis_special/*
+mmdet.egg-info/
+outputs/*
+__pycache__/
+*.pyc
