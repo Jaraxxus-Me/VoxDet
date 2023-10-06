@@ -61,7 +61,7 @@ VoxDet
 
 ## Testing
 
-Our trained models and raw results are available for download [here](https://mega.nz/file/4d1nRAxT#ka0DEGW4henw-RAyeuF-39ew9MQPr17zt9ENKO4LSqg). 
+Our trained models and raw results are available for download here. 
 
 Place it under `outputs/` and run the following commands to test VoxDet on LM-O and YCB-V datasets.
 
