@@ -4,7 +4,7 @@ _base_ = [
     '../_base_/default_runtime.py'
 ]
 # optimizer
-optimizer = dict(type='Sergery', lr=0.01, momentum=0.9, weight_decay=0.0001, train_module='relate_3d', hard_fix='none')
+optimizer = dict(type='Sergery', lr=0.001, momentum=0.9, weight_decay=0.0001, train_module='relate_3d', hard_fix='none')
 # model settings
 model = dict(
     type='ZidRCNN',
@@ -223,9 +223,9 @@ lr_config = dict(
     warmup_iters=500,
     warmup_ratio=0.001,
     step=[6, 7])
-total_epochs = 11
+total_epochs = 1
 
-checkpoint_config = dict(interval=200, by_epoch=False)
+checkpoint_config = dict(interval=100, by_epoch=False)
 # yapf:disable
 log_config = dict(
     interval=10,
@@ -238,7 +238,7 @@ dist_params = dict(backend='nccl')
 log_level = 'INFO'
 load_from = None
 resume_layers = None
-resume_from = 'work_dirs/VoxDet_p2_1/iter_56251.pth'
+resume_from = 'outputs/VoxDet_p2_1/iter_56251.pth'
 workflow = [('train', 1)]
 
-work_dir='./work_dirs/VoxDet_p2_2/'
+work_dir='./outputs/VoxDet_p2_2/'

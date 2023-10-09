@@ -9,7 +9,7 @@ model = dict(
     pretrained='torchvision://resnet50',
     neg_rpn=False,
     mode='det',
-    D=4,
+    D=16, #default is 16, for lmo and ycbv
     backbone=dict(
         type='ResNet',
         depth=50,
@@ -168,7 +168,7 @@ model = dict(
 # Dataset
 dataset_type = 'BopDataset'
 data_root = 'data/BOP/'
-dataset = 'RoboTools' # 'lmo' 'ycbv'
+dataset = 'lmo' # 'lmo' 'ycbv'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [

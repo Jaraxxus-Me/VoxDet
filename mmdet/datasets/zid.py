@@ -609,7 +609,7 @@ class ZidDataset(CustomDataset):
                 s = recall
                 if iouThr is not None:
                     t = np.where(iouThr == p.iouThrs)[0]
-                    s = s[t]
+                    s = s[t, :, aind, mind]
                 else:
                     s = s[1:, :, aind, mind]
             if len(s[s > -1]) == 0:
@@ -623,9 +623,9 @@ class ZidDataset(CustomDataset):
 
         stats = np.zeros((10, ))
         stats[0] = _summarize(precision, recall, params, 0, maxDets=1)
-        stats[1] = _summarize(precision, recall, params, 0, iouThr=.25, maxDets=1)
-        stats[2] = _summarize(precision, recall, params, 0, iouThr=.5, maxDets=1)
-        stats[3] = _summarize(precision, recall, params, 0, iouThr=.75, maxDets=1)
+        stats[1] = _summarize(precision, recall, params, 0, iouThr=.5, maxDets=1)
+        stats[2] = _summarize(precision, recall, params, 0, iouThr=.75, maxDets=1)
+        stats[3] = _summarize(precision, recall, params, 0, iouThr=.95, maxDets=1)
         stats[4] = _summarize(precision, recall, params, 0,
                                 areaRng='small',
                                 maxDets=1)

@@ -1,3 +1,11 @@
+"""This file contains code to build dataloader of COCO-split dataset.
+
+Reference:
+    "Learning Open-World Object Proposals without Learning to Classify",
+        Aug 2021. https://arxiv.org/abs/2108.06753
+        Dahun Kim, Tsung-Yi Lin, Anelia Angelova, In So Kweon and Weicheng Kuo
+"""
+
 import itertools
 import logging
 import os.path as osp
@@ -65,8 +73,7 @@ class BopDataset(CustomDataset):
         object_names = {
             'lmo': LMO_OBJECT,
             'ycbv': YCB_CLASSES,
-            'RoboTools': ROBO_CLASSES,
-            'RoboTools_special': ROBO_CLASSES
+            'RoboTools': ROBO_CLASSES
         }
         # camera pose info
         all_cam_path = os.path.join(self.p1_path, 'scene_gt_all.json')
@@ -493,7 +500,7 @@ class BopDataset(CustomDataset):
                 s = recall
                 if iouThr is not None:
                     t = np.where(iouThr == p.iouThrs)[0]
-                    s = s[t]
+                    s = s[t, :, aind, mind]
                 else:
                     s = s[1:, :, aind, mind]
             if len(s[s > -1]) == 0:
@@ -507,9 +514,9 @@ class BopDataset(CustomDataset):
 
         stats = np.zeros((10, ))
         stats[0] = _summarize(precision, recall, params, 0, maxDets=MAX_DET)
-        stats[1] = _summarize(precision, recall, params, 0, iouThr=.25, maxDets=MAX_DET)
-        stats[2] = _summarize(precision, recall, params, 0, iouThr=.5, maxDets=MAX_DET)
-        stats[3] = _summarize(precision, recall, params, 0, iouThr=.75, maxDets=MAX_DET)
+        stats[1] = _summarize(precision, recall, params, 0, iouThr=.5, maxDets=MAX_DET)
+        stats[2] = _summarize(precision, recall, params, 0, iouThr=.75, maxDets=MAX_DET)
+        stats[3] = _summarize(precision, recall, params, 0, iouThr=.95, maxDets=MAX_DET)
         stats[4] = _summarize(precision, recall, params, 0,
                                 areaRng='small',
                                 maxDets=MAX_DET)

@@ -1,7 +1,7 @@
 
 # VoxDet: Voxel Learning for Novel Instance Detection
 
-### NeurIPS Anonymous Submission 366
+### NeurIPS'23 **SpotLight**
 
 
 
@@ -42,7 +42,7 @@ pip install -e .
 
 ## Prepare datasets
 
-We provide the processed [LM-O](https://mega.nz/file/pUlgQa7Z#Qcmj0zh7gUXszeeVPqMLQVYtkknad9_gzqsNQwss6kY) and [YCB-V](https://mega.nz/file/AB82EJwZ#76mVyk-L3cGRJGX7-KDUBcePNE1o1O96G4F58b5PxGI) to reproduce the evaluation.
+We provide the processed [OWID](https://mega.nz/file/pUlgQa7Z#Qcmj0zh7gUXszeeVPqMLQVYtkknad9_gzqsNQwss6kY), [LM-O](https://mega.nz/file/pUlgQa7Z#Qcmj0zh7gUXszeeVPqMLQVYtkknad9_gzqsNQwss6kY), [YCB-V](https://mega.nz/file/pUlgQa7Z#Qcmj0zh7gUXszeeVPqMLQVYtkknad9_gzqsNQwss6kY) and [RoboTools](https://mega.nz/file/AB82EJwZ#76mVyk-L3cGRJGX7-KDUBcePNE1o1O96G4F58b5PxGI) to reproduce the evaluation.
 
 You can download them and creat data structure like this:
 
@@ -54,7 +54,13 @@ VoxDet
 ├── data
 │   ├── BOP
 │   │   ├── lmo
+|   |   |   ├── test
+|   |   |   ├── test_video
 │   │   ├── ycbv
+│   │   ├── RoboTools
+│   ├── OWID
+│   │   ├── P1
+│   │   ├── P2
 ```
 
 
@@ -86,10 +92,13 @@ The results will be shown in the `.txt` file.
 Our training set OWID will be released upon acceptance, while we provide the code and script here:
 
 ```shell
-# Single-GPU training
+# Single-GPU training for the reconstruction stage
 bash tools/train.sh
 
-# Multi-GPU training
+# Multi-GPU training for the base detection, this should already produce the results close to table 1
 bash tools/train_dist.sh
+
+# Optional, use ground truth rotation for supervision for (slightly) better result 
+bash tools/train_dist_2.sh
 
 ```
