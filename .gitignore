@@ -5,3 +5,4 @@ mmdet.egg-info/
 outputs/*
 __pycache__/
 *.pyc
+*.zip
