@@ -1,7 +1,9 @@
 
 # VoxDet: Voxel Learning for Novel Instance Detection
 
-### NeurIPS'23 **SpotLight**
+### Bowen Li, Jiashun Wang, Yaoyu Hu, Chen Wang, and Sebastian Scherer
+
+### NeurIPS'23 :star2: ==SpotLight== :star2:
 
 
 
@@ -42,7 +44,7 @@ pip install -e .
 
 ## Prepare datasets
 
-We provide the processed [OWID](), [LM-O](), [YCB-V]() and [RoboTools]() to reproduce the evaluation.
+We provide the processed [OWID](https://drive.google.com/file/d/1sRHaVd4exOmGqFUVT6JKUzEOrDeHmlbT/view?usp=sharing), [LM-O](https://drive.google.com/file/d/1cY8gWF6t0IhEa0nLPVWfHMcPlfTNFPwe/view?usp=sharing), [YCB-V](https://drive.google.com/file/d/1JpixHE9DN-W-BVFkVC12qss0CUu9VA8y/view?usp=sharing) and [RoboTools](https://drive.google.com/file/d/1kXR-Z-sJlTnWy3HRGWAcV6_IIJgRHbD6/view?usp=sharing) to reproduce the evaluation.
 
 You can download them and creat data structure like this:
 
@@ -67,7 +69,7 @@ VoxDet
 
 ## Testing
 
-Our trained [models and raw results]() for all the stages are available for download. 
+Our trained [models and raw results](https://drive.google.com/file/d/1VrXcT6tQwhR0zDlANribjcyAritFqKn7/view?usp=sharing) for all the stages are available for download. 
 
 Place it under `outputs/` and run the following commands to test VoxDet on LM-O and YCB-V datasets.
 
