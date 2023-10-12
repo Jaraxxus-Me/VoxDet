@@ -3,7 +3,7 @@
 
 ### Bowen Li, Jiashun Wang, Yaoyu Hu, Chen Wang, and Sebastian Scherer
 
-### NeurIPS'23 :star2: ==SpotLight== :star2:
+### NeurIPS'23 :star2: SpotLight :star2:
 
 
 
