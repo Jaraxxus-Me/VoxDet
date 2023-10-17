@@ -103,6 +103,8 @@ bash tools/train_dist.sh
 # Optional, use ground truth rotation for supervision for (slightly) better result, see table 4 for details
 bash tools/train_dist_2.sh
 
+```
+
 ## Reference
 If our work inspires your research, please cite us as:
 
@@ -115,6 +117,4 @@ If our work inspires your research, please cite us as:
 	volume={},
 	number={}
 }
-```
-
 ```
