@@ -103,4 +103,18 @@ bash tools/train_dist.sh
 # Optional, use ground truth rotation for supervision for (slightly) better result, see table 4 for details
 bash tools/train_dist_2.sh
 
+## Reference
+If our work inspires your research, please cite us as:
+
+```
+@INPROCEEDINGS{Li2023iccv,       
+	author={Li, Bowen and Wang, Jiashun and Hu, Yaoyu and Wang, Chen and Scherer, Sebastian},   
+	booktitle={Proceedings of the Advances in Neural Information Processing Systems (NeurIPS)}, 
+	title={{VoxDet: Voxel Learning for Novel Instance Detection}},
+	year={2023},
+	volume={},
+	number={}
+}
+```
+
 ```
