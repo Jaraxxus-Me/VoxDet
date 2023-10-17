@@ -65,6 +65,7 @@ VoxDet
 │   │   ├── P2
 ```
 
+You can also compile your custom instance detection dataset using [this toolkit](https://github.com/Jaraxxus-Me/OWID-toolkit.git), it is very useful :)
 
 
 ## Testing
