@@ -110,7 +110,7 @@ bash tools/train_dist_2.sh
 If our work inspires your research, please cite us as:
 
 ```
-@INPROCEEDINGS{Li2023iccv,       
+@INPROCEEDINGS{Li2023vox,       
 	author={Li, Bowen and Wang, Jiashun and Hu, Yaoyu and Wang, Chen and Scherer, Sebastian},   
 	booktitle={Proceedings of the Advances in Neural Information Processing Systems (NeurIPS)}, 
 	title={{VoxDet: Voxel Learning for Novel Instance Detection}},
