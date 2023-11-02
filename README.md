@@ -101,7 +101,7 @@ The results will be shown in the `.txt` file.
 
 ## Training
 
-Our training set OWID will be released upon acceptance, while we provide the code and script here:
+Our training set OWID has been released, we provide the code and script here:
 
 ```shell
 # Single-GPU training for the reconstruction stage
