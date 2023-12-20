@@ -30,7 +30,7 @@ This repo is tested under Python 3.7, PyTorch 1.7.0, Cuda 11.0, and mmcv==1.2.5.
 
 
 ## Installation
-
+### Build your own env (not recommended, mmcv is hard to setup)
 This repo is built based on [mmdetection](https://github.com/open-mmlab/mmdetection). 
 
 For evaluation, you also need [bop_toolkit](https://mega.nz/file/BAEj3TgS#yzwX2AHUg9CtCsmDV17rxVkmFhw4mh34y6gvQ3FDS4E)
@@ -48,6 +48,18 @@ cd ..
 cd bop_toolkit
 pip install -e .
 ```
+### Docker (Strongly recommended)
+```shell
+docker pull bowenli1024/voxdet:ros-v1
+```
+In side the docker image:
+```
+cd VoxDet
+pip install -v -e .
+cd bop_toolkit
+pip install -e .
+```
+
 
 
 
