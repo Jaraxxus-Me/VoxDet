@@ -33,7 +33,7 @@ This repo is tested under Python 3.7, PyTorch 1.7.0, Cuda 11.0, and mmcv==1.2.5.
 ### Build your own env (not recommended, mmcv is hard to setup)
 This repo is built based on [mmdetection](https://github.com/open-mmlab/mmdetection). 
 
-For evaluation, you also need [bop_toolkit](https://mega.nz/file/BAEj3TgS#yzwX2AHUg9CtCsmDV17rxVkmFhw4mh34y6gvQ3FDS4E)
+For evaluation, you also need modified [bop_toolkit](https://github.com/Jaraxxus-Me/bop_toolkit.git)
 
 You can use the following commands to create conda env with related dependencies.
 ```shell
@@ -42,10 +42,13 @@ conda activate voxdet
 pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
 export CUDA_HOME=/usr/local/cuda
 pip install mmcv-full==1.7.1
+git clone https://github.com/Jaraxxus-Me/VoxDet.git
+cd VoxDet
 pip install -r requirements.txt
 pip install -v -e . 
 
 cd ..
+git clone https://github.com/Jaraxxus-Me/bop_toolkit.git
 cd bop_toolkit
 pip install -e .
 ```
@@ -55,8 +58,11 @@ docker pull bowenli1024/voxdet:ros-v1
 ```
 In side the docker image:
 ```
+git clone https://github.com/Jaraxxus-Me/VoxDet.git
 cd VoxDet
 pip install -v -e .
+cd ..
+git clone https://github.com/Jaraxxus-Me/bop_toolkit.git
 cd bop_toolkit
 pip install -e .
 ```
