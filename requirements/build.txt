@@ -1,3 +1,7 @@
 # These must be installed before building mmdetection
-cython
+cython==0.29.14
 numpy
+mmpycocotools
+pypng
+pytz
+npy_append_array
