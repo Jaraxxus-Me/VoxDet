@@ -39,8 +39,8 @@ You can use the following commands to create conda env with related dependencies
 ```shell
 conda create -n voxdet python=3.7 -y
 conda activate voxdet
-conda install pytorch=1.7.0 torchvision cudatoolkit=11.0 -c pytorch -y
-pip install mmcv-full==1.2.7
+pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+pip install mmcv-full==1.7.1
 pip install -r requirements.txt
 pip install -v -e . 
 
