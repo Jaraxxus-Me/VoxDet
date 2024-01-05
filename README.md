@@ -15,7 +15,10 @@ Detecting unseen instances based on multi-view templates is a challenging proble
   - [Here](https://github.com/Jaraxxus-Me/OWID-toolkit.git)
 - [X] Open-source ROS interface of VoxDet
   - [Here](https://github.com/Jaraxxus-Me/voxdet_ros), also a small demo :)
-- [ ] Open-source all the other baseline-results (will be made public after conference)
+- [X] Open-source all the other baseline raw results (will be made public after conference)
+  - [Here](https://drive.google.com/file/d/1-YjFWgcT0waL44EjPscLMu-Db3AMA1XS/view?usp=sharing)
+  - I may not provide the details for how to run the code for each of them, but you can use my raw results to verify the numbers in Table 1 and 2 in the paper.
+  - There are demonstrations below on how to evaluate these results.
 
 ## Requirements
 
@@ -91,6 +94,23 @@ VoxDet
 
 You can also compile your custom instance detection dataset using [this toolkit](https://github.com/Jaraxxus-Me/OWID-toolkit.git), it is very useful :)
 
+## Training
+
+Our training set OWID has been released, we provide the code and script here:
+
+```shell
+# Single-GPU training for the reconstruction stage
+bash tools/train.sh
+
+# Multi-GPU training for the base detection, this should already produce the results close to table 1
+bash tools/train_dist.sh
+
+# Optional, use ground truth rotation for supervision for (slightly) better result, see table 4 for details
+bash tools/train_dist_2.sh
+
+```
+Note: The `train_dist.sh` may consume a lot of CPU memory (~150GB), make sure you have enough RAM to avoid OOM problems.
+
 ## Testing
 
 Our trained [models and raw results](https://drive.google.com/file/d/1VrXcT6tQwhR0zDlANribjcyAritFqKn7/view?usp=sharing) for all the stages are available for download.
@@ -111,20 +131,13 @@ python3 tools/test.py --config configs/voxdet/${CONFIG}.py --out outputs/$OUT_DI
 
 The results will be shown in the `.txt` file.
 
-## Training
+## Evaluation
 
-Our training set OWID has been released, we provide the code and script here:
-
+With the [raw_result](https://drive.google.com/file/d/1-YjFWgcT0waL44EjPscLMu-Db3AMA1XS/view?usp=sharing) `[Method].pkl`, you can directly evaluate them and get the numbers in Table 1 and Table 2 without running the inference again.
 ```shell
-# Single-GPU training for the reconstruction stage
-bash tools/train.sh
-
-# Multi-GPU training for the base detection, this should already produce the results close to table 1
-bash tools/train_dist.sh
-
-# Optional, use ground truth rotation for supervision for (slightly) better result, see table 4 for details
-bash tools/train_dist_2.sh
-
+# change line 171 in VoxDet_test.py for other datasets
+# For example, output the evaluation results for OLN_Corr.
+python3 tools/eva_only.py --config configs/voxdet/VoxDet_test.py --out baselines/lmo/oln_corr.pkl
 ```
 
 ## Reference
