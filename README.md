@@ -17,7 +17,7 @@ Detecting unseen instances based on multi-view templates is a challenging proble
   - [Here](https://github.com/Jaraxxus-Me/voxdet_ros), also a small demo :)
 - [X] Open-source all the other baseline raw results (will be made public after conference)
   - [Here](https://drive.google.com/file/d/1-YjFWgcT0waL44EjPscLMu-Db3AMA1XS/view?usp=sharing)
-  - I may not provide the details for how to run the code for each of them, but you can use my raw results to verify the numbers in Table 1 and 2 in the paper.
+  - You can use the raw results to verify the numbers in Table 1 and 2 in the paper.
   - There are demonstrations below on how to evaluate these results.
 
 ## Requirements
